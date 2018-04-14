@@ -34,15 +34,6 @@ GetRoutineByName(
     PVOID hDriver, 
     LPCSTR FunctionName);
 
-#ifdef ALLOC_PRAGMA
-#pragma alloc_text(INIT, DoRelocation)
-#pragma alloc_text(INIT, FindImports)
-#pragma alloc_text(INIT, GetModuleByName)
-#pragma alloc_text(INIT, GetRoutineByName)
-#pragma alloc_text(INIT, DriverBootstrap)
-#endif
-
-
 //Not an accurate stricmp! Works fine for our needs
 inline BOOLEAN xstricmp(LPCSTR s1, LPCSTR s2) {
     for (ULONG i = 0; 0 == ((s1[i] ^ s2[i]) & 0xDF); ++i)
